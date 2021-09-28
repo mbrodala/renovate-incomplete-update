@@ -1,5 +1,17 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    ":separatePatchReleases"
+  ],
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": " ({{{displayFrom}}} => {{{displayTo}}})",
+  "composerIgnorePlatformReqs": null,
+  "rangeStrategy": "update-lockfile",
+  "packageRules": [
+    {
+      "packagePatterns": ["^typo3/cms-*"],
+      "groupName": "TYPO3"
+    }
   ]
 }
